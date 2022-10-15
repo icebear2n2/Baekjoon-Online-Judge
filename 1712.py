@@ -1,14 +1,12 @@
-from fractions import Fraction
-
 a, b, c = map(int, input().split())
 
-num = a // (1 - Fraction(b, c))
-
-i = num // c
-
-if (a + (b * 2100000000)) > (c * 2100000000):
+num = c - b
+try:
+    num2 = a // num
+except ZeroDivisionError:
+    num2 = -1
+    
+if num2 < 0:
     print(-1)
-elif num == (a + (b * i)):
-    print(i+1) 
 else:
-    print(i)
+    print(num2+1)
