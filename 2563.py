@@ -1,31 +1,16 @@
 n = int(input())
 
-x_list = []
-y_list = []
-xy_list = []
-xy = 1
+paper = [[0 for _ in range(101)] for _ in range(101)]
 
-for i in range(n):
+for _ in range(n):
     x, y = map(int, input().split())
-    x_list.append(x)
-    y_list.append(y)
+    for i in range(x, x+10):
+        for j in range(y, y+10):
+            paper[i][j] = 1
 
-x_list.sort()
-y_list.sort()
+result = 0
 
-for i in range(n-1):
-    if (x_list[0] + 10) < x_list[i+1]:
-        del x_list[i+1]
-        
-    elif (y_list[0] + 10) < y_list[i+1]:
-        del y_list[i+1]
-
-xy_list.append(list(set(x_list)))
-xy_list.append(list(set(y_list)))
-
-for i in range(len(xy_list)):
-    xy *= 10 - (xy_list[i][-1] - xy_list[i][0])
-
-result = (100 * n) - xy
-
+for row in paper:
+    result += row.count(1)
 print(result)
+        
