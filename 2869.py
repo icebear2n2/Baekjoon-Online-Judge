@@ -1,15 +1,7 @@
 A, B, V = map(int, input().split())
+result = round(V / (A - B))
 
-Day = 0
-num = 0
-
-if (A - B) == 1:
-    print(V - B)
+if result == V:
+    print(result - B)
 else:
-    while num < V:
-        Day += 1
-        num += (A - B)
-
-    print(Day)
-        
-        
+    print(result)
