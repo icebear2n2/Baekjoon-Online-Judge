@@ -1,2 +1,9 @@
 A, B, V = map(int, input().split())
-Day = 0
+
+
+if round(V / A) * A > V:
+    print(round(V / A) + 1)
+elif (A - B) == 1:
+    print(V - B)
+else:
+    print(round(V / A) + 1)
