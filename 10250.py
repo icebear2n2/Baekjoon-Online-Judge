@@ -1,10 +1,13 @@
-t = int(input())
+x = int(input())
 
-for i in range(t):
+for i in range(x):
     h, w, n = map(int, input().split())
-    num = n//h + 1
+
+    num = n // h + 1
     floor = n % h
+    
     if n % h == 0:
-        num = n//h
+        num = n // h
         floor = h
+    
     print(f'{floor*100+num}')
