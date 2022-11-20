@@ -1,14 +1,17 @@
-lst = [1, 2, 3]
-lst2 = [1, 2, 3]
+num=int(input())
+for i in range(num):
+    k = int(input())
+    x = int(input())
 
-for i in range(len(lst)):
-    print(i)
-    for j in range(i):
-        lst2[i] += lst[j]
-        print(lst2)
+    lst = [i for i in range(1, x+1)]
+    lst2 = [i for i in range(1, x+1)]
 
+    for n in range(k):
+        for i in range(len(lst)):
+            for j in range(i):
+                lst2[i] += lst[j]
 
-lst.clear()
-
-lst.extend(lst2)
+        lst.clear()
+        lst.extend(lst2)
+    print(lst2[x-1])
 
