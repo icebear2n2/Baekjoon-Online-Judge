@@ -1,15 +1,19 @@
 # 3, 5
 # 18, 4, 6, 9, 11
+
 n = int(input())
 
-if (n - 3) == 0 or (n - 5) == 0:
-    print(1)
+num1 = 3
+num2 = 5
+
+if n % 8 == 0:
+    print((n // 8) * 2)
+elif n % 8 == num1 or  n % 8 == num2:
+    print(((n // 8) * 2) + 1)
 else:
-    while True:
-        if n % 5 == 3:
-            print((n // 5)+1)
-            break
-        else:
-            if n % 3 == 0:
-                print(n // 3)
-            break
+    if n % num1 == 0:
+        print(n // num1)
+    elif n % num2 == 0:
+        print(n // num2)
+    else:
+        print(-1)
