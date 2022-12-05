@@ -1,21 +1,14 @@
-n, m = map(int, input().split())
-def factorization(n, m):
+def isPrime(num):
+    if num==1:
+        return False
+    else:
+        for i in range(2, int(num**0.5)+1):
+            if num%i == 0:
+                return False
+        return True
 
-    lst = []
-    num = 0
-    for i in range(n, m+1):
-        d = 2
-        while d <= i:
-            if i % d == 0:
-                if d in lst:
-                    break
-                i = i / d
-                num = d
-                if num < n:
-                    break
-                print(num)
-                lst.append(num)
-            else:
-                d = d + 1
-factorization(n, m) 
+M, N = map(int, input().split())
 
+for i in range(M, N+1):
+    if isPrime(i):
+        print(i)
