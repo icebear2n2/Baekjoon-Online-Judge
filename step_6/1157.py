@@ -1,7 +1,12 @@
-str = input()
-str_list = list(str.lower())
-set_str_list = set(list(str.lower()))
+str = input().upper()
+set_str = list(set(str))
 
 count = []
-for i in set_str_list:
-    count.append(str_list.count(i))
+for i in set_str:
+    count.append(str.count(i))
+
+if count.count(max(count)) > 1:
+    print("?")
+else:
+    print(set_str[(count.index(max(count)))])
+
